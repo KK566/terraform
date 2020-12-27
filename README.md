@@ -1,4 +1,4 @@
-# TerraForm
+# Terraform
 
 ## Azure
 
