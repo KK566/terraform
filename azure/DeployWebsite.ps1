@@ -12,7 +12,7 @@ $session2 = New-PSSession -ComputerName myrg.germanywestcentral.cloudapp.azure.c
             -Port 10001 -UseSSL -SessionOption (New-PSSessionOption -SkipCACheck `
             -SkipCNCheck) -Credential $cred
 
-$localWebsite = ".\sites\*.*"
+$localWebsite = ".\website\*.*"
 $destination = "C:\inetpub\wwwroot"
 
 Invoke-Command -Session $session1 -ScriptBlock {
