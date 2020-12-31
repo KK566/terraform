@@ -15,6 +15,9 @@ $session2 = New-PSSession -ComputerName myrg.germanywestcentral.cloudapp.azure.c
 $localWebsite = ".\website\*.*"
 $destination = "C:\inetpub\wwwroot"
 
+# I had to hardcode the website dir because passing a variable with "$($destination)\*"
+# or "${destination}\*" produced an error.
+
 Invoke-Command -Session $session1 -ScriptBlock {
     Install-WindowsFeature -Name Web-Server
     Remove-Item "C:\inetpub\wwwroot\*" -Recurse -Include *.*
