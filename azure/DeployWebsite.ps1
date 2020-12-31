@@ -17,11 +17,11 @@ $destination = "C:\inetpub\wwwroot"
 
 Invoke-Command -Session $session1 -ScriptBlock {
     Install-WindowsFeature -Name Web-Server
-    Remove-Item "$destination\*" -Recurse -Include *.*
+    Remove-Item "C:\inetpub\wwwroot\*" -Recurse -Include *.*
 }
 Invoke-Command -Session $session2 -ScriptBlock { 
     Install-WindowsFeature -Name Web-Server
-    Remove-Item "$destination\*" -Recurse -Include *.*
+    Remove-Item "C:\inetpub\wwwroot\*" -Recurse -Include *.*
 }
 
 Copy-Item -Path $localWebsite -Destination $destination -ToSession $session1
